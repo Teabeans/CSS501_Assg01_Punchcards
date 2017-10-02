@@ -1,0 +1,230 @@
+// Tim Lum
+// twhlum@gmail.com
+// https://uwb-hibernaculum.slack.com/
+// 2017.10.01
+// For the University of Washington Bothell CSS 501A
+// Autumn 2017, Graduate Certificate in Software Design & Development (GCSDD)
+//
+// File Description:
+// Distillation and printable form of course 'Design and Coding Standards'
+//
+// Required files:
+// None
+//
+// Acknowledgements:
+// Source material from:
+// University of Washington Bothell
+// CSS 501A Data Structures And Object-Oriented Programming I
+// "Design and Coding Standards"
+// Michael Stiber
+//
+// Template author:
+// Tim Lum (twhlum@gmail.com)
+//
+// Source file originally at:
+// https://canvas.uw.edu/courses/1116064/pages/css-501-design-and-coding-standards
+// (Deprecated by end of quarter; source closed. Content included as 'APPENDIX_02')
+//
+// License:
+// This software is published under the GNU general license which guarantees end users
+// the freedom to run, study, share and modify the software.
+// https://www.gnu.org/licenses/gpl.html
+
+// ---- BEGIN PRINTABLE CONTENT ----
+
+--- STEP 00 --- DO YOU NEED DESIGN DOCUMENTATION? ---
+
+If 'yes' to any of the following, documentation is required:
+
+I. Will more than one person work on or examine this code?
+   Y / N
+
+II. Is the problem too large to mentally comprehend in its entirety?
+   Y / N
+
+III. Will the code ever be revisited at a future date?
+   Y / N
+
+IV. Will questions by other users ever arise regarding the code?
+   Y / N
+
+
+--- STEP 01 --- PROBLEM SPECIFICATION ---
+
+Specification - A precise and detailed problem statement. Divided into five sections:
+
+I. Problem Statement - Further divided into general categories:
+   A. Problem description - A textual explanation of the problem to be solved.
+Lorem ipsum dolor sit amet, cu menandri singulis usu. At nec perpetua petentium, no his solum deleniti.
+
+   B. Assumptions being made
+Lorem ipsum dolor sit amet, cu menandri singulis usu. At nec perpetua petentium, no his solum deleniti.
+
+   C. Clarifications needed
+Lorem ipsum dolor sit amet, cu menandri singulis usu. At nec perpetua petentium, no his solum deleniti.
+
+   D. Assumptions that can be made
+Lorem ipsum dolor sit amet, cu menandri singulis usu. At nec perpetua petentium, no his solum deleniti.
+
+   E. Corner cases
+Lorem ipsum dolor sit amet, cu menandri singulis usu. At nec perpetua petentium, no his solum deleniti.
+
+II. Input Data
+   A. Description:
+   
+
+   B. Source:
+   
+
+   C. Format:
+   
+
+   D. Invalid data:
+   
+
+III. Output Data
+   A. Description:
+   
+
+   B. Format:
+   
+
+IV. Error Handling - Error detection, message, and handling
+   A. <ERROR NAME GOES HERE>
+      0. Description: 
+      1.     Message: 
+      2.      Handle: 
+
+   B. <ERROR NAME GOES HERE>
+      0. Description: 
+      1.     Message: 
+      2.      Handle: 
+
+   C. <ERROR NAME GOES HERE>
+      0. Description: 
+      1.     Message: 
+      2.      Handle: 
+
+V. Test Plan - Should focus on testing the correct operation of the program, not on erroneous inputs.
+   A. Case 0: <Description>
+      0. High boundary: 
+      1. Typical value: 
+      2. Low boundary : 
+
+   B. Case 1: <Description>
+      0. High boundary: 
+      1. Typical value: 
+      2. Low boundary : 
+
+
+--- STEP 02 --- STRUCTURE CHARTS ---
+
+I. See 'APPENDIX_00' - Displays the hierarchical algorithmic structure of a system.
+   A. Designate 'Entire Problem'
+      0. Name and description
+      1. Box at top, center of diagram
+   B. Designate sub-problems
+      0. Name and description
+      2. Draw below relevant problem box, forming a logical hierarchy
+   C. Use annotated lines to indicate calls between functions
+      0. Use arrowheads on lines to indicate direction of function calls
+      1. Parameters - One-way information passed, but not modified.
+         a. Draw with dot and arrow.
+         b. Label with the name used by the calling procedure.
+      2. Return values - Value sent back by the called function
+         a. If return value is not used by calling function, then omit.
+         b. Otherwise, draw with dot and arrow.
+         c. And label with the name used by the called procedure.
+      3. Modified parameters - Parameters passed via reference or to which pointers are passed.
+         a. Draw with dot and two arrows.
+         b. Arrows point to called and calling procedure.
+   D. Continue designating subproblems until you arrive at problems which can be solved
+      0. When all subproblem branches have solutions at all their leaves, the diagram is complete
+
+
+--- STEP 03 --- CLASS DIAGRAMS ---
+
+I. See 'APPENDIX_01' - Defines critical data for each defined class within the program
+
+II. Comprised of a rectangle, subdivided into three sections:
+
+   A. The class name
+      0. Located at the top
+      1. CamelCased
+
+   B. Attributes / Fields
+      0. Listed in the middle (in alphabetical order)
+      1. Prefixed by visibility (Optional)
+         a. '+' == public
+         b. '#' == protected
+         c. '-' == private
+      2. The attribute name (Required)
+         a. Lower-cased first word, CamelCased thereafter (e.g. "variableName")
+         b. End with colon character (':')
+      3. Data type (optional)
+      4. Initial assignment value (optional)
+         a. Preceded by 'gets' or assignment operator ("=")
+      5. Example: "+ someVariable : boolean = true"
+         a. Public boolean attribute named "someVariable", assigned the initial value of 'true'.
+
+   C. Operations
+      0. Listed at the bottom (in alphabetical order)
+      1. Prefixed by visibility (Optional)
+         a. '+' == public
+         b. '#' == protected
+         c. '-' == private
+      2. The attribute name (Required)
+         a. CamelCased (e.g. "OperationName")
+         b. End with colon character (':')
+      3. The return value (Required if applicable)
+         a. Lower-cased first word, CamelCased thereafter (e.g. "returnValue")
+         b. End with colon character (':')
+      4. Example: "+ SomeOperation(someArgument) : someReturn"
+         a. Public operation named "SomeOperation", receiving "someArgument", generates "someReturn"
+
+
+--- STEP 04 --- DESIGN STANDARDS ---
+
+I. Variable scope (in order of preference)
+   A. const - Constant, the value of the variable cannot be changed. Should be performed as often as possible
+   B. auto - Private, allocated and deallocated at block entry and exit, respectively
+   C. static - Global, allocated at program execution, deallocated at program termination (?CONFIRM?)
+   D. extern - ??? (?CONFIRM?)
+
+II. Functions
+   A. Should perform only one, simply defined operation
+   B. This operation may be the merging of two other functions
+
+III. Parameters and Return Values
+   A. Descriptively named
+   B. Minimal in number per function
+
+IV. Methods
+   A. Descriptively named
+   B. Private by default - Properly encapsulated
+   C. const - Constant, by default unless method is intended to modify the object's state.
+
+V. Interfaces
+   A. The interface of an Abstract Data Type (ADT, also called a "class" or "object type") are the outward facing values.
+   B. Differentiated from internal implementation details.
+   C. Internal implementation and external interfaces should be kept separate.
+
+VI. Input-Output (I/O) and User-Interfacing (UI)
+   A. ADTs should not include any user interface operations
+      0. UI functionality should be a separate problem from ADT design
+   B. You *may* use generic stream I/O operators in ADT design
+      0. friend operator<< - ??? (?CONFIRM?)
+      1. friend operator>> - ??? (?CONFIRM?)
+
+// ---- END PRINTABLE CONTENT ----
+
+--- APPENDIX_00 ---
+Program UML Chart - <HYPERLINK OR ADDRESS GOES HERE>
+
+--- APPENDIX_01 ---
+Class Diagrams - <HYPERLINK OR ADDRESS GOES HERE>
+
+--- APPENDIX_02 ---
+"CSS 501 Design and Coding Standards" text:
+
+<Omitted pending author approval (Michael Stiber)>
