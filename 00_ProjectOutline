@@ -1,0 +1,46 @@
+Assignment specification:
+I. Problem statement
+II. Input and output data
+III. Error handling
+IV. Test plan
+V. UML diagrams
+
+Phase 0: Prepare to store the punchcard data
+0. Read over the input file to determine how many punchcard segments there are
+1. Generate a final output storage array of chars of size equal to the number of punchcards.
+2. Generate a single punchcard storage array of length 80. Data type is a "Column" object, which is just an array of 12 chars.
+3. Reset input stream to beginning of card files.
+(Post-condition) - (2) arrays exist: (1) for storing the decoded complete sequence and (1) for storing an individual card (we're going to decode them one by one to save memory).
+
+While there are still cards to read...
+0. What is the test? Last card in sequence is defined as having Xs ALL THE WAY DOWN THE FIRST COLUMN
+    a. (Corner Case) - X's down part of the first column (bad data, but not the last card)
+    b. (Corner Case) - Cards exist *after* the one with X's down the first column (operator mixed up the stack)
+    c. (Corner Case) - ???
+
+Phase 1: Read a punchcard to the temporary (small) storage array
+0. For 12 times... (each row)
+1. For 80 times... (each column)
+2. Read the input and append to the storage array, incrementing the storage index by 1 each time.
+(Post-condition) - Each column of a card has been loaded to an index
+
+Phase 2: Convert the card storage sequence to characters
+0. For each index in the storage array (0-79)...
+1. Translate the sequence of whitespaces and X's to a character
+    a. (Provisional) - Use '!' for unreadable character (sequence is not found on conversion table)
+    b. Store the char to a local or global field.
+    c. (Query) - Can we bypass saving the total sequence to an array and merely kick characters to the output stream as they're ready?
+        i. (Reply) - Probably. Checking with TA and prof.
+    d. (Provisional) - Use series of if-then-else statements to test what character we're looking at
+        i. If <test for illegal characters is true> then we're looking at <errorchar> ('!'). 
+        ii. If <char at index 0/11 is X> AND <char at index 4/11 is X>, then we're looking at <somechar>
+        iii. Have to write a test for every valid character. (Q_Q)
+        iv. Might be a faster and more elegant method to do this
+(Post-condition) - Index is converted to a character
+2. Load the translated character to the char storage array.
+
+(Post-condition) - This card has been loaded, as chars, to the storage array.
+
+Phase 3: Output array
+0. Read over large storage array to output stream.
+(Post-condition) - Profit!
