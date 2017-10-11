@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSS_501A_Assg01_Punchards", "CSS_501A_Assg01_Punchards\CSS_501A_Assg01_Punchards.vcxproj", "{BFB4F4F0-7D69-4691-AB65-24BF32E9645B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cinTest", "Project1\Project1.vcxproj", "{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{BFB4F4F0-7D69-4691-AB65-24BF32E9645B}.Release|x64.Build.0 = Release|x64
 		{BFB4F4F0-7D69-4691-AB65-24BF32E9645B}.Release|x86.ActiveCfg = Release|Win32
 		{BFB4F4F0-7D69-4691-AB65-24BF32E9645B}.Release|x86.Build.0 = Release|Win32
+		{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}.Debug|x64.ActiveCfg = Debug|x64
+		{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}.Debug|x64.Build.0 = Debug|x64
+		{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}.Debug|x86.ActiveCfg = Debug|Win32
+		{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}.Debug|x86.Build.0 = Debug|Win32
+		{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}.Release|x64.ActiveCfg = Release|x64
+		{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}.Release|x64.Build.0 = Release|x64
+		{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}.Release|x86.ActiveCfg = Release|Win32
+		{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

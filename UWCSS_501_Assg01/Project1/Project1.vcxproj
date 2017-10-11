@@ -20,9 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{BFB4F4F0-7D69-4691-AB65-24BF32E9645B}</ProjectGuid>
-    <RootNamespace>CSS_501A_Assg01_Punchards</RootNamespace>
+    <ProjectGuid>{6B7C3765-1781-43CE-B8DB-CA2FD017D68F}</ProjectGuid>
+    <RootNamespace>Project1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <ProjectName>cinTest</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -111,11 +112,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Assg01_Driver_PunchCards.cpp" />
-    <ClCompile Include="PunchCard.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PunchCard.h" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

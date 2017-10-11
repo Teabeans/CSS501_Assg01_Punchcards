@@ -1,3 +1,9 @@
-﻿  main.cpp
+﻿  PunchCard.cpp
+f:\projects\00_teabean\04_academics\uw gcsdd\css501\assg01_punchcards\uwcss_501_assg01\css_501a_assg01_punchards\punchcard.cpp(142): warning C4101: 'zonePunch': unreferenced local variable
+f:\projects\00_teabean\04_academics\uw gcsdd\css501\assg01_punchcards\uwcss_501_assg01\css_501a_assg01_punchards\punchcard.cpp(146): warning C4101: 'otherPunch': unreferenced local variable
+f:\projects\00_teabean\04_academics\uw gcsdd\css501\assg01_punchcards\uwcss_501_assg01\css_501a_assg01_punchards\punchcard.cpp(138): warning C4101: 'outputArray': unreferenced local variable
+f:\projects\00_teabean\04_academics\uw gcsdd\css501\assg01_punchcards\uwcss_501_assg01\css_501a_assg01_punchards\punchcard.cpp(134): warning C4101: 'inputArray': unreferenced local variable
+  Assg01_Driver_PunchCards.cpp
+  Generating Code...
   CSS_501A_Assg01_Punchards.vcxproj -> F:\Projects\00_Teabean\04_Academics\UW GCSDD\CSS501\Assg01_Punchcards\UWCSS_501_Assg01\Debug\CSS_501A_Assg01_Punchards.exe
   CSS_501A_Assg01_Punchards.vcxproj -> F:\Projects\00_Teabean\04_Academics\UW GCSDD\CSS501\Assg01_Punchcards\UWCSS_501_Assg01\Debug\CSS_501A_Assg01_Punchards.pdb (Partial PDB)

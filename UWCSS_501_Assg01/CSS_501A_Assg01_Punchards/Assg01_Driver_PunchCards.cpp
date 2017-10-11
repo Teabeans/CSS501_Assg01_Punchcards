@@ -5,7 +5,10 @@
 // Autumn 2017, Graduate Certificate in Software Design & Development (GCSDD)
 //
 // File Description:
-// This file is the header (definitions) of the PunchCard class.
+// This file is the driver program for Assignment 01 - PunchCards
+//
+// Program Description:
+// Program to accept virtual punchcard inputs via 'cin' and output ASCII text equivalent to 'cout'
 //
 // Package files:
 // Assg01_Driver_PunchCards.cpp
@@ -104,90 +107,54 @@
 
 // ---- IMPORT STATEMENTS ----
 
-#pragma once
-
 //Necessary to interact with 'cin' and 'cout' streams
 #include <iostream>
 
 // Necessary for string operations
 #include <string>
 
+// Includes the PunchCard header file so the compiler has all function signatures
+#include "PunchCard.h"
+
+// ---- NAMESPACE STATEMENTS ----
+
+// Using the standard namespace (prevents us from having to be explicit everywhere with standard namespace definitions)
 using namespace std;
 
-class PunchCard {
+// ---- GLOBAL VARIABLES ----
+// - PROHIBITED FOR THIS COURSE -
 
-// --- PRIVATE REGION --- PRIVATE REGION --- PRIVATE REGION ---
-private:
+// ---- MAIN ----
 
-// PRIVATE FIELDS:
+// Driver class
+int main() {
 
-// inputArray: A 2-Dimensional array, 80-wide, 12 deep. Used to store inputs from 'cin'
+// EBCDTable: Defines the decoding schema as a 2-dimensional array.
 // Invariant information: Accepts only ASCII chars. Size of array cannot be altered.
-   char inputArray[12][80];
+//                           Other:    0    1    2    3    4    5    6    7    8    9
+   const char EBCDTable[4][10] = {  { ' ', '1', '2', '3', '4', '5', '6', '7', '8', '9' },    // Zone 0
+                                    { '&', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I' },    // Zone 1
+                                    { '-', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R' },    // Zone 2
+                                    { '0', '/', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }  }; // Zone 3
 
-   // outputArray - The decoded ASCII sequence
-   char outputArray[80];
+// Instantiate a punchcard object named 'omniCard'
+   PunchCard omniCard;
 
-   // EBCDTable - Encoded values
-   char EBCDTable[4][10];
+// While the currently loaded card is not the last card (and if there's only one card, it's false by default so we'll execute at least once)
+// Loop Invariant Before: omniCard.isLastCard() returns false
+// Loop Invariant After: omniCard.isLastCard() returns false
+   while (omniCard.isLastCard() == false) {
 
-   // zonePunch - Integer representing the zone punch (from 0 to 3)
-   int zonePunch = 0;
+// Overloaded insertion operator (>>) handles advancing to valid data, parsing, and loading of the card's inputArray.
+      cin >> omniCard;
 
-   // otherPunch - Integer representing the other punch (from 0 to 9)
-   int otherPunch = 0;
+// omniCard translates the input using the decoding schema defined above
+      omniCard.translate(EBCDTable);
 
-// PRIVATE METHODS:
+// omniCard will report back to main whether the last card was hit on the latest loop.
+      cout << omniCard.toString();
+   }
 
+   return(0);
 
-// --- PUBLIC REGION --- PUBLIC REGION --- PUBLIC REGION ---
-public:
-
-// PUBLIC FIELDS:
-
-// PUBLIC METHODS:
-
-
-// ---- CONSTRUCTOR ----
-   PunchCard();
-
-   // const <return type> <method name>( <arguments> );
-   // e.g. const bool checkIfLastCard();
-
-   // isLastCard() - To declare whether the first column of the current card is fully punched out or not.
-   // Parameters: No internal fields
-   // Preconditions: None
-   // Postconditions: None
-   // Return value: boolean, representing whether this is the "last" card in a stack (true) or not (false).
-   // Functions called: None
-   const bool isLastCard();
-
-   // translate() - To translate the inputArray based upon a received decoding table.
-   // Parameters: No internal fields
-   // Preconditions: inputArray must be an 80 x 12 array. decodeTable must by a 4 x 10 array.
-   // Postconditions: outputArray must be loaded with values limited to those in the decodeTable.
-   // Return value: Not applicable
-   // Functions called: None
-   const void translate(const char[4][10]);
-
-   // toString() - To return a string representation of the decoded PunchCard.
-   // Parameters: returnString - Used to concatenate successive characters from the outputArray.
-   // Preconditions: None
-   // Postconditions: returnString is 80 characters in length, plus a newline character at its end.
-   // Return value: A string, 80 characters in length, with a newline character at its end.
-   // Functions called: None
-   const string toString();
-
-// >> - Custom behavior for the insertion operator when dealing with an istream object (left) and a PunchCard object (right)
-// Parameters: thisLine - Used to store successive lines of data from cin.
-// Preconditions: Content must be loaded to cin, terminated by newline characters.
-// Postconditions: inputArray will be loaded with the first 80 characters of the first 12 lines of input from cin.
-// Return value: None
-// Functions called: getline - Pulls the first line of data from cin
-// If it's in the class definition, include 'friend'
-   friend istream& operator>>(istream& cinData, PunchCard& someCard);
-//        inputStream (by reference) operator-named->> ( <left argument type>(by reference) <left argument name>, <right argument type>(by reference) <right argument name>);
-
-// ---- DESTRUCTOR -----
-//   ~PunchCard(); // Can be ignored for this assignment.
-};
+}
